@@ -1,0 +1,249 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "vanitysoft-boundaries-io-v1.p.rapidapi.com",
+  "basePath" : "/reaperfire/rest/v1/public/boundary/county/levy/state/fl",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/state/fl" : {
+      "get" : {
+        "tags" : [ "countrBoundGet" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "countrBoundGet",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "x-rapidapi-key",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "x-rapidapi-host",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/countrBoundGet"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "countrBoundGet##Region" : {
+      "properties" : {
+        "ID" : {
+          "type" : "string"
+        },
+        "LocalizedName" : {
+          "type" : "string"
+        },
+        "EnglishName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "countrBoundGet##Country" : {
+      "properties" : {
+        "ID" : {
+          "type" : "string"
+        },
+        "LocalizedName" : {
+          "type" : "string"
+        },
+        "EnglishName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "countrBoundGet##AdministrativeArea" : {
+      "properties" : {
+        "ID" : {
+          "type" : "string"
+        },
+        "LocalizedName" : {
+          "type" : "string"
+        },
+        "EnglishName" : {
+          "type" : "string"
+        },
+        "Level" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "LocalizedType" : {
+          "type" : "string"
+        },
+        "EnglishType" : {
+          "type" : "string"
+        },
+        "CountryID" : {
+          "type" : "string"
+        }
+      }
+    },
+    "countrBoundGet##TimeZone" : {
+      "properties" : {
+        "Code" : {
+          "type" : "string"
+        },
+        "Name" : {
+          "type" : "string"
+        },
+        "GmtOffset" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "IsDaylightSaving" : {
+          "type" : "boolean"
+        },
+        "NextOffsetChange" : {
+          "type" : "string"
+        }
+      }
+    },
+    "countrBoundGet##GeoPosition##Elevation##Metric" : {
+      "properties" : {
+        "Value" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "Unit" : {
+          "type" : "string"
+        },
+        "UnitType" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "countrBoundGet##GeoPosition##Elevation##Imperial" : {
+      "properties" : {
+        "Value" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "Unit" : {
+          "type" : "string"
+        },
+        "UnitType" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "countrBoundGet##GeoPosition##Elevation" : {
+      "properties" : {
+        "Metric" : {
+          "$ref" : "#/definitions/countrBoundGet##GeoPosition##Elevation##Metric"
+        },
+        "Imperial" : {
+          "$ref" : "#/definitions/countrBoundGet##GeoPosition##Elevation##Imperial"
+        }
+      }
+    },
+    "countrBoundGet##GeoPosition" : {
+      "properties" : {
+        "Latitude" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "Longitude" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "Elevation" : {
+          "$ref" : "#/definitions/countrBoundGet##GeoPosition##Elevation"
+        }
+      }
+    },
+    "countrBoundGet##SupplementalAdminAreas" : {
+      "properties" : {
+        "Level" : {
+          "type" : "number"
+        },
+        "LocalizedName" : {
+          "type" : "string"
+        },
+        "EnglishName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "countrBoundGet" : {
+      "properties" : {
+        "Version" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "Key" : {
+          "type" : "string"
+        },
+        "Type" : {
+          "type" : "string"
+        },
+        "Rank" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "LocalizedName" : {
+          "type" : "string"
+        },
+        "EnglishName" : {
+          "type" : "string"
+        },
+        "PrimaryPostalCode" : {
+          "type" : "string"
+        },
+        "Region" : {
+          "$ref" : "#/definitions/countrBoundGet##Region"
+        },
+        "Country" : {
+          "$ref" : "#/definitions/countrBoundGet##Country"
+        },
+        "AdministrativeArea" : {
+          "$ref" : "#/definitions/countrBoundGet##AdministrativeArea"
+        },
+        "TimeZone" : {
+          "$ref" : "#/definitions/countrBoundGet##TimeZone"
+        },
+        "GeoPosition" : {
+          "$ref" : "#/definitions/countrBoundGet##GeoPosition"
+        },
+        "IsAlias" : {
+          "type" : "boolean"
+        },
+        "SupplementalAdminAreas" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/countrBoundGet##SupplementalAdminAreas"
+          }
+        },
+        "DataSets" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
