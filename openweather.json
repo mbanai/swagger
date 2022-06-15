@@ -1,0 +1,191 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api.openweathermap.org",
+  "basePath" : "/data/2.5",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/weather?lat=35&lon=139&appid=5219ca07e1dfa66b3d202077e7577d8e" : {
+      "get" : {
+        "tags" : [ "openweather" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "openweather",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/openweather"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "openweather##coord" : {
+      "properties" : {
+        "lon" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "openweather##weather" : {
+      "properties" : {
+        "id" : {
+          "type" : "number"
+        },
+        "main" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "icon" : {
+          "type" : "string"
+        }
+      }
+    },
+    "openweather##main" : {
+      "properties" : {
+        "temp" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "feels_like" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "temp_min" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "temp_max" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "pressure" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "humidity" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "openweather##wind" : {
+      "properties" : {
+        "speed" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "deg" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "gust" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "openweather##clouds" : {
+      "properties" : {
+        "all" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "openweather##sys" : {
+      "properties" : {
+        "type" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "sunrise" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "sunset" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "openweather" : {
+      "properties" : {
+        "coord" : {
+          "$ref" : "#/definitions/openweather##coord"
+        },
+        "weather" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/openweather##weather"
+          }
+        },
+        "base" : {
+          "type" : "string"
+        },
+        "main" : {
+          "$ref" : "#/definitions/openweather##main"
+        },
+        "visibility" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "wind" : {
+          "$ref" : "#/definitions/openweather##wind"
+        },
+        "clouds" : {
+          "$ref" : "#/definitions/openweather##clouds"
+        },
+        "dt" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "sys" : {
+          "$ref" : "#/definitions/openweather##sys"
+        },
+        "timezone" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "cod" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    }
+  }
+}
